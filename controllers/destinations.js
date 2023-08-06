@@ -1,21 +1,21 @@
 import mongoose from "mongoose";
-import Hebergement from "../models/hebergement.js";
+import Destination from "../models/destination.js";
 
-export const getHebergement = async (req, res) => {    
+export const getDestination = async (req, res) => {    
     try {
 
-        const hebergement = await Hebergement.find({},{__v:0,_id:0});
+        const destination = await Destination.find({},{__v:0,_id:0});
         
 
-        res.status(200).json(hebergement);
+        res.status(200).json(destination);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
 }
 
-export const createHebergement = async (req,res) => {
+export const createDestination = async (req,res) => {
     const post = req.body;
-    const newPost = new Hebergement (post);
+    const newPost = new Destination (post);
 
     try {
         await newPost.save();

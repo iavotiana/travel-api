@@ -5,6 +5,7 @@ import cors from 'cors';
 import postRoutes from "./routes/posts.js";
 import userRoutes from './routes/users.js';
 import hebergementRoutes from "./routes/hebergement.js";
+import destinationRoutes from "./routes/destination.js";
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use('/posts',postRoutes);
 app.use('/user',userRoutes);
 app.use('/hebergement',hebergementRoutes);
+app.use('/destination',destinationRoutes);
 
 
 const CONNECTION_URL = 'mongodb+srv://ranivoaritidasandy:Gohqac-jedmab-7pitgu@cluster0.nkkbyzl.mongodb.net/?retryWrites=true&w=majority';
