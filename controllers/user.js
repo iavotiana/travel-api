@@ -35,13 +35,13 @@ export const signup = async (req, res) => {
 
         if(existingUser) return res.status(400).json({ message: "L'email existe déja."});
 
-        concole.log("signup oui")
+        console.log("signupui");
 
         const hashedPassword = await bcrypt.hash(password, 12);
 
         const result = await User.create({ nom,email,password:hashedPassword})
 
-        const token = jwt.sign({ email:result.email, id:result._id, nom:result.nom}, 'test' , { expiresIn: "12h"});
+        const token = jwt.sign({ email:result.email, id:result._id, nom:result.nom,password:hashedPassword}, 'test' , { expiresIn: "12h"});
 
         res.status(200).json({ UserModel:result, token });
 
