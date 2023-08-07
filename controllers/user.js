@@ -29,13 +29,13 @@ export const signin = async ( req, res) => {
 }
 
 export const signup = async (req, res) => {
-    const { email, password , confirmPassword, nom} = req.body;
+    const { nom,email, password } = req.body;
     try {
         const existingUser = await User.findOne({ email});
 
         if(existingUser) return res.status(400).json({ message: "L'email existe déja."});
 
-        if(password !== confirmPassword) return res.status(400).json({message: " le mot de passe ne correspond pas. "});
+        concole.log("signup oui")
 
         const hashedPassword = await bcrypt.hash(password, 12);
 

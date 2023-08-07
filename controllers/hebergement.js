@@ -6,7 +6,6 @@ export const getHebergement = async (req, res) => {
 
         const hebergement = await Hebergement.find({},{__v:0,_id:0});
         
-
         res.status(200).json(hebergement);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -24,17 +23,5 @@ export const createHebergement = async (req,res) => {
     } catch (error) {
         res.status(409).json({ message: error.message});
     }
-}
-export const gethebergementByLieu = async (req, res) => {
-    let { lieu } = req.query;
 
-  try {
-    lieu = new RegExp(lieu, "i");
-    console.log({lieu})
-    const hebergements = await Hebergement.find( {lieu }); 
-
-    res.json({ data: hebergements }); 
-    } catch (error) {    
-        res.status(404).json({ message: error.message });
-    }
 }
