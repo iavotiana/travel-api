@@ -6,7 +6,7 @@ const hebergementSchema = mongoose.Schema({
     description: String ,
     prix:Number,
     note:Number,
-    contentWebWiew:String,
+    contentWebView:String,
     urlImage:String
 })
 

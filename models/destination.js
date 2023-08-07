@@ -5,7 +5,7 @@ const destinationSchema = mongoose.Schema({
     lieu: String,
     description: String ,
     note:Number,
-    contentWebWiew:String,
+    contentWebView:String,
     urlImage:String
 })
 
