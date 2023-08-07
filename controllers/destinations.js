@@ -5,6 +5,7 @@ export const getDestination = async (req, res) => {
     try {
 
         const destination = await Destination.find({},{__v:0,_id:0});
+        console.log("tonga destination")
         
 
         res.status(200).json(destination);
